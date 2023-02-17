@@ -2,8 +2,8 @@
 /// <reference path="../node_modules/immutable/dist/immutable.d.ts" />
 
 import "angular2/bundles/angular2-polyfills";
-import {Component, provide, Inject} from "angular2/core";
-import {HTTP_PROVIDERS} from "angular2/http";
+import {Component, provide, Inject} from "@angular/core";
+import {HttpModule } from "@angular/http";
 import {Header} from "./Header";
 import {TodoList} from "./TodoList";
 import {Todo} from "./Todo";
@@ -11,13 +11,13 @@ import {Footer} from "./Footer";
 import {TodoService} from "./TodoService";
 import {LoadTodosAction, AddTodoAction, StartBackendAction, EndBackendAction, Action} from "./state/todoActions";
 import {List} from "immutable";
-import {bootstrap} from "angular2/platform/browser";
+import {bootstrap} from "@angular/platform/browser";
 import {dispatcher, state, initialState} from "./di-tokens";
-import {Subject} from "rxjs/Subject";
+import {Subject} from "rxjs";
 import {applicationStateFactory} from "./state/applicationStateFactory";
-import {Observable} from "rxjs/Observable";
+import {Observable} from "rxjs";
 import {ApplicationState} from "./state/application-state";
-import {Observer} from "rxjs/Observer";
+import {Observer} from "rxjs";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/scan';
 import 'rxjs/add/operator/share';
@@ -97,7 +97,7 @@ export class App {
 }
 
 bootstrap(App, [
-    HTTP_PROVIDERS,
+    HttpModule ,
     TodoService,
     provide(initialState, {useValue: {todos: List([]), uiState: initialUiState}}),
     provide(dispatcher, {useValue: new Subject<Action>()}),

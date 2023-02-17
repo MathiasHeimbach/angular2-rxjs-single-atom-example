@@ -1,11 +1,12 @@
-import {Component, Input, Output, EventEmitter, Inject} from 'angular2/core';
+import {Component, Input, Output, EventEmitter, Inject} from '@angular/core';
 import {Todo} from "./Todo";
 import {List} from 'immutable';
 import {TodoService} from "./TodoService";
 import {ToggleTodoAction, DeleteTodoAction, Action} from './state/todoActions';
 import {dispatcher,state} from "./di-tokens";
-import {Observer} from "rxjs/Observer";
-import {Observable} from "rxjs/Observable";
+import {Observer} from "rxjs";
+import {Observable} from "rxjs";
+import {map} from "rxjs";
 import {ApplicationState} from "./state/application-state";
 
 

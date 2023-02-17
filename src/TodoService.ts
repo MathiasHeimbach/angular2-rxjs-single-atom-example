@@ -1,9 +1,9 @@
 
-import {Injectable,Inject} from 'angular2/core';
-import  {Http,Headers,URLSearchParams} from 'angular2/http';
+import {Injectable,Inject} from '@angular/core';
+import  {Http,Headers,URLSearchParams} from '@angular/common/http';
 import {Todo} from "./Todo";
 import {List} from 'immutable';
-import {Observable} from "rxjs/Observable";
+import {Observable} from "rxjs";
 
 
 @Injectable()

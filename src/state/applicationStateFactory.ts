@@ -1,11 +1,11 @@
 
-import {Observable} from "rxjs/Observable";
+import {Observable} from "rxjs";
 import {Action} from "./todoActions";
 import {ApplicationState} from "./application-state";
 import {dispatcher} from "../di-tokens";
 import {calculateTodos, calculateUiState} from "./reducers";
 import {UiState, initialUiState} from "./ui-state";
-import {BehaviorSubject} from "rxjs/Rx";
+import {BehaviorSubject} from "rxjs";
 
 function wrapIntoBehaviorSubject(init, obs) {
     const res = new BehaviorSubject(init);
